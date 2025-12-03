@@ -5,6 +5,8 @@ from gi.repository import GObject, RB, Peas
 import json
 import os
 
+# See https://lazka.github.io/pgi-docs/#RB-3.0 for documentation of the RhythmBox API
+
 class MemoryPlugin(GObject.Object, Peas.Activatable):
     __gtype_name__ = 'MemoryPlugin'
     object = GObject.property(type=GObject.Object)
@@ -52,6 +54,7 @@ class MemoryPlugin(GObject.Object, Peas.Activatable):
                 entry = db.entry_lookup_by_location(uri)
                 if entry:
                     source = self._source_with_name(source_name)
+                    self.shell.activate_source(source, 0)
                     self.player.play_entry(entry, source)
                     GObject.timeout_add(200, self._pause_player)
                     print(f"Restored state: {uri} from {source_name or 'library'}")
