@@ -19,8 +19,6 @@ From within the rhythmbox-memory directory run:
 make update
 ```
 
-Note: The `make update` target in the Makefile runs `git pull` and then `make install` for you.
-
 ## Debug
 To run Rhythmbox and show plugin-specific debug output, run:
 ```shell
