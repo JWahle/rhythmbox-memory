@@ -1,0 +1,9 @@
+[Plugin]
+Loader=python3
+Module=memory
+IAge=2
+Name=Memory
+Description=Resumes playback at the last track.
+Authors=Johannes Wahle
+Copyright=Copyright © 2025 Johannes Wahle
+Website=https://github.com/JWahle/rhythmbox-memory
